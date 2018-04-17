@@ -1,23 +1,23 @@
 package com.archibald.domain;
 
 public class Stage {
-	private Archibald archibald;
+	private Robot robot;
 	private Table table;
 	
-	public Stage(Archibald archibald, Table table) {
+	public Stage(Robot robot, Table table) {
 		super();
-		if(table.getX() < archibald.getPosX() ||
-		   table.getY() < archibald.getPosY()) {
+		if(table.getX() < robot.getPosX() ||
+		   table.getY() < robot.getPosY()) {
 			throw new IllegalStateException("Archibald can not be located outside of the table.");
 		}
-		this.archibald = archibald;
+		this.robot = robot;
 		this.table = table;
 	}
-	public Archibald getArchibald() {
-		return archibald;
+	public Robot getRobot() {
+		return robot;
 	}
-	public void setArchibald(Archibald archibald) {
-		this.archibald = archibald;
+	public void setRobot(Robot robot) {
+		this.robot = robot;
 	}
 	public Table getTable() {
 		return table;

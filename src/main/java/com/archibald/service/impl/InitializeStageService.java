@@ -1,20 +1,20 @@
-package com.archibald.service;
+package com.archibald.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.archibald.domain.Archibald;
+import com.archibald.domain.Robot;
 import com.archibald.domain.Direction;
 import com.archibald.domain.Stage;
 import com.archibald.domain.StageList;
 import com.archibald.domain.Table;
 
-@Service
-public class InitializeStageService {
+@Service("InitializeStageService")
+public class InitializeStageService implements com.archibald.service.inter.InitializeStageService{
 	
 	public void initializeStage(int dimensionX, int dimensionY, int posX, int posY, Direction direction) {
 		Table table = new Table(dimensionX, dimensionY);
-		Archibald archie = new Archibald(posX, posY, direction);
+		Robot archie = new Robot(posX, posY, direction);
 		Stage stage = new Stage(archie, table);
-		StageList.stageList.add(stage);
+		StageList.stageList.put("Temp", stage);
 	}
 }

@@ -1,11 +1,11 @@
 package com.archibald.domain;
 
-public class Archibald {
+public class Robot {
 	private int posX;
 	private int posY;
 	private Direction direction;
 	
-	public Archibald(int posX, int posY, Direction direction) {
+	public Robot(int posX, int posY, Direction direction) {
 		super();
 		if(posX < 0 || posY < 0) {
 			throw new IllegalStateException("Archibald can not be placed in negative dimensions.");
