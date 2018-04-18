@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "adef0b44-f3a1-4fd0-b7e0-f8d926448882",
+		"name": "Archibald Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"admin\",\"password\":\"password\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "login service to generate Json Web Token.\n\nbelow users can be used to generate a token.\n-------\nadmin\npassword\n--------\nadmin2\npassword2\n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/initializeStage",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDk1MTQxMH0.KzGle_ppYTizCTXnHnJRrLDpub-tgYmRoZa2UX9FilhMbXkeA8Y6TZaR4-veFS0U3qy0hXomHxZDQZKmZUIeNw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dimensionX\": \"10\",\n\t\"dimensionY\": \"10\",\n\t\"posX\": \"5\",\n\t\"posY\": \"5\",\n\t\"direction\": \"WEST\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/initializeStage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"initializeStage"
+					]
+				},
+				"description": "initializeStage is for initialization.\n\nRelative token must be provided."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/move",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDk1MTQxMH0.KzGle_ppYTizCTXnHnJRrLDpub-tgYmRoZa2UX9FilhMbXkeA8Y6TZaR4-veFS0U3qy0hXomHxZDQZKmZUIeNw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/move",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"move"
+					]
+				},
+				"description": "moves Archibald(the bad robot) by 1 point!"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDk1MTQxMH0.KzGle_ppYTizCTXnHnJRrLDpub-tgYmRoZa2UX9FilhMbXkeA8Y6TZaR4-veFS0U3qy0hXomHxZDQZKmZUIeNw"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report"
+					]
+				},
+				"description": "reports Archibald(the bad robot)'s location and direction"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/turnLeft",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDk1MTQxMH0.KzGle_ppYTizCTXnHnJRrLDpub-tgYmRoZa2UX9FilhMbXkeA8Y6TZaR4-veFS0U3qy0hXomHxZDQZKmZUIeNw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/turnLeft",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnLeft"
+					]
+				},
+				"description": "turns Archibald(the bad robot) to left"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/turnRight",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUyNDk1MTQxMH0.KzGle_ppYTizCTXnHnJRrLDpub-tgYmRoZa2UX9FilhMbXkeA8Y6TZaR4-veFS0U3qy0hXomHxZDQZKmZUIeNw"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/turnRight",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"turnRight"
+					]
+				},
+				"description": "turns Archibald(the bad robot) to right"
+			},
+			"response": []
+		}
+	]
+}
