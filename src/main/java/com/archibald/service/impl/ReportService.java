@@ -1,15 +1,20 @@
 package com.archibald.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.archibald.domain.Robot;
 import com.archibald.domain.Stage;
 import com.archibald.domain.StageList;
+import com.archibald.service.output.ServiceOutput;
 
-@Service("ReportService")
-public class ReportService implements com.archibald.service.inter.ReportService{
+@Service
+public class ReportService implements com.archibald.service.contract.ReportService{
 
-	public String report(String token) {
+	private static final Logger logger = LoggerFactory.getLogger(ReportService.class);
+	
+	public ServiceOutput report(String token) {
 		Stage stage = StageList.stageList.get(token);
 		Robot robot = stage.getRobot();
 		
@@ -20,6 +25,9 @@ public class ReportService implements com.archibald.service.inter.ReportService{
 		sb.append(robot.getPosY());
 		sb.append(" direction:");
 		sb.append(robot.getDirection());
-		return sb.toString();
+		
+		logger.info(" service is finished.");
+		
+		return new ServiceOutput("0", "Successful. " + sb.toString());
 	}
 }
