@@ -18,7 +18,7 @@ public class ReportService implements com.archibald.service.contract.ReportServi
 		Stage stage = StageList.stageList.get(token);
 		if(null == stage) {
 			return new ServiceOutput("-1", "Please call initializeStage service first with the token provided."+
-		                                   " If you do not have a token, please call login service to acquire one.");
+		                                   " If you do not have a token, please call login service to acquire a new one.");
 		}
 		Robot robot = stage.getRobot();
 		

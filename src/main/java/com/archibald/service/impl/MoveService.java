@@ -19,7 +19,7 @@ public class MoveService implements com.archibald.service.contract.MoveService{
 		Stage stage = StageList.stageList.get(token);
 		if(null == stage) {
 			return new ServiceOutput("-1", "Please call initializeStage service first with the token provided."+
-		                                   " If you do not have a token, please call login service to acquire one.");
+		                                   " If you do not have a token, please call login service to acquire a new one.");
 		}
 		Robot robot = stage.getRobot();
 		boolean check = false;
