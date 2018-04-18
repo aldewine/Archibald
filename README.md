@@ -3,7 +3,7 @@
 
 Security is provided by Json Web Token
 
-Every Stage is saved into a set with Token provided, so multiple users can initiate their own stage.
+Every Stage is saved into a HashMap with Token provided, so multiple users can initiate their own stage.
 
 postman collection is provided, though you have to change web token every time after login.
 
